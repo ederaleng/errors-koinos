@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package testingupload;
+
+message state {
+  uint64 num_a  = 1 [jstype = JS_STRING];
+  uint64 num_b  = 2 [jstype = JS_STRING];
+  uint64 total = 3 [jstype = JS_STRING];
+}
+
+// @description data update
+// @read-only false
+message update_arguments {
+  uint64 num_a  = 1 [jstype = JS_STRING];
+  uint64 num_b  = 2 [jstype = JS_STRING];
+  uint64 total = 3 [jstype = JS_STRING];
+}
+
+message update_result {
+  bool result = 1;
+}
+
+
+// @description get data
+// @read-only true
+message current_arguments {
+}
+
+message current_result {
+  uint64 num_a  = 1 [jstype = JS_STRING];
+  uint64 num_b  = 2 [jstype = JS_STRING];
+  uint64 total = 3 [jstype = JS_STRING];
+}
+
